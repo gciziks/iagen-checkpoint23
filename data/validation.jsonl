@@ -1,0 +1,10 @@
+{"text":"A redefinição de senha não chega ao meu endereço de e-mail.","label":"acesso"}
+{"text":"Minha conta informa usuário inválido mesmo com os dados corretos.","label":"acesso"}
+{"text":"A cobrança no cartão veio em duplicidade este mês.","label":"pagamento"}
+{"text":"O Pix consta pago mas não foi confirmado na loja.","label":"pagamento"}
+{"text":"A encomenda está parada no centro de distribuição há uma semana.","label":"entrega"}
+{"text":"O pacote foi entregue no endereço errado.","label":"entrega"}
+{"text":"Preciso cancelar a renovação do meu plano.","label":"cancelamento"}
+{"text":"Como anulo este pedido e solicito estorno?","label":"cancelamento"}
+{"text":"Qual o telefone da assistência técnica?","label":"outros"}
+{"text":"O aplicativo fecha sozinho quando abro as configurações.","label":"outros"}

@@ -1,0 +1,10 @@
+{"text":"Não consigo acessar minha conta porque a verificação por SMS falha.","label":"acesso"}
+{"text":"Quero alterar a senha, mas não consigo entrar no perfil.","label":"acesso"}
+{"text":"Fui cobrado novamente depois de quitar a fatura.","label":"pagamento"}
+{"text":"Como obtenho o recibo do pagamento feito pelo Pix?","label":"pagamento"}
+{"text":"Minha entrega não chegou na data prometida.","label":"entrega"}
+{"text":"A encomenda chegou aberta e o item está faltando.","label":"entrega"}
+{"text":"Quero parar de usar o serviço e cancelar o plano.","label":"cancelamento"}
+{"text":"Solicito desistência da compra dentro do prazo.","label":"cancelamento"}
+{"text":"Onde posso consultar os termos de uso?","label":"outros"}
+{"text":"A tela de ajuda apresenta uma mensagem de erro.","label":"outros"}

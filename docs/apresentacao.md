@@ -1,0 +1,21 @@
+# Roteiro sugerido para apresentação
+
+1. **Problema:** direcionar chamados para a equipe certa; mostrar as cinco categorias e um exemplo de entrada/saída.
+2. **Modelo:** Qwen2.5-0.5B-Instruct e por que LoRA permite fine-tuning em uma GPU doméstica de 12 GB.
+3. **Dados:** mostrar contagem e partições em `data/`; explicar que são sintéticos e que não suportam alegações de uso real.
+4. **Método:** prompt de classificação, loss sobre o rótulo gerado, CUDA obrigatória, semente, rank LoRA e matriz de quatro combinações de taxa de aprendizado/épocas.
+5. **Hardware:** abrir o terminal integrado do VS Code e executar `nvidia-smi` seguido de `python scripts/check_gpu.py`; capturar a tela inteira com GPU, memória e CUDA disponível visíveis. Na máquina de desenvolvimento, o `nvidia-smi` observou NVIDIA GeForce RTX 3060 com 12 GB em 14/10/2026; repita a verificação no equipamento usado na apresentação.
+6. **Resultados:** preencher a tabela abaixo diretamente dos CSV/JSON gerados; comentar macro-F1 e matriz de confusão, incluindo número reduzido de exemplos.
+7. **Demonstração:** `streamlit run app.py`, inserir chamado de cada categoria e mostrar a previsão e GPU ativa.
+8. **Limitações e próximos passos:** aumentar e revisar dataset, avaliar em mensagens reais anonimizadas sob autorização, fazer divisão mais robusta, comparar base sem ajuste, calibrar/revisar previsões incertas e medir latência.
+
+## Tabela de resultados
+
+| Configuração | LR | Épocas | Loss validação | Accuracy validação | Macro-F1 validação |
+|---|---:|---:|---:|---:|---:|
+| lr1e-4_ep2 | 0,0001 | 2 | preencher | preencher | preencher |
+| lr1e-4_ep3 | 0,0001 | 3 | preencher | preencher | preencher |
+| lr2e-4_ep2 | 0,0002 | 2 | preencher | preencher | preencher |
+| lr2e-4_ep3 | 0,0002 | 3 | preencher | preencher | preencher |
+
+Para relatório final, substitua os campos com `results/experiments.csv` após execução. Teste final: accuracy `____`, macro-F1 `____`; não preencher até que `python scripts/evaluate.py` tenha sido executado.
