@@ -1,39 +1,50 @@
-# Classificador de chamados em português com LLM local
+# Classificação local de chamados em português com ajuste fino de LLM
 
-Projeto acadêmico reproduzível para ajustar e avaliar localmente o **Qwen2.5-0.5B-Instruct** com LoRA. O modelo recebe uma mensagem de suporte em português e devolve uma categoria: `acesso`, `pagamento`, `entrega`, `cancelamento` ou `outros`.
+Este repositório apresenta um experimento de adaptação supervisionada de um modelo de linguagem para classificar mensagens de suporte em cinco categorias: `acesso`, `pagamento`, `entrega`, `cancelamento` e `outros`. A solução usa o **Qwen2.5-0.5B-Instruct** como modelo-base e ajuste fino eficiente **LoRA**, com treinamento e inferência local em GPU NVIDIA.
 
-> O conjunto incluído é sintético, criado para demonstrar o pipeline; não representa clientes reais nem permite afirmar desempenho em produção. Execute o experimento antes de apresentar métricas. Os resultados são gravados em `results/` e não estão pré-preenchidos.
+## Resumo dos resultados
 
-## Ambiente e GPU
+Foram comparadas quatro configurações, variando taxa de aprendizado e número de épocas. A configuração selecionada pela validação foi taxa `2e-4` e três épocas. No conjunto de teste, composto por dez exemplos sintéticos, obteve accuracy de **0,90** e macro-F1 de **0,893** (nove classificações corretas). Um chamado da classe `outros` foi previsto como `acesso`.
 
-Desenvolvido para Windows, Python 3.11 ou 3.12, CUDA e NVIDIA. O script encerra com erro se CUDA não estiver disponível: tanto treino como avaliação rodam na GPU.
+Os resultados comprovam a execução do pipeline, mas não estimam desempenho em atendimento real: o conjunto é pequeno e inteiramente sintético. A interpretação completa, a matriz de confusão e as previsões estão em [`docs/relatorio.md`](docs/relatorio.md) e [`results/`](results/).
 
-1. Instale o [PyTorch com CUDA](https://pytorch.org/get-started/locally/) compatível com seu driver. Confirme no terminal integrado do VS Code: `nvidia-smi` e `python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0))"`.
-2. Crie/ative um ambiente virtual e instale: `pip install -r requirements.txt`.
-3. `python scripts/check_gpu.py` para registrar a GPU e versões em `results/gpu_info.txt`.
-4. `python scripts/train.py` para executar os experimentos; modelos e métricas ficam em `artifacts/` e `results/`.
-5. `streamlit run app.py` para abrir o frontend local. Selecione um adaptador treinado em `artifacts/`.
+## Recursos e metodologia
 
-Na demonstração, capture no VS Code o terminal integrado exibindo `nvidia-smi` e `python scripts/check_gpu.py`. O relatório gerado por `check_gpu.py` também registra os dados detectados, mas o print deve ser capturado na máquina que executa o projeto.
+- Modelo-base: [Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct), com aproximadamente 0,5 bilhão de parâmetros.
+- Ajuste supervisionado com LoRA aplicado às projeções `q_proj` e `v_proj`.
+- Dados balanceados e sintéticos: 50 exemplos de treino, 10 de validação e 10 de teste.
+- Avaliação com accuracy, macro-F1, loss de validação e matriz de confusão.
+- Interface local em Streamlit para receber um chamado e exibir sua categoria prevista.
 
-## Experimentos
+## Ambiente experimental
 
-O treino compara learning rates `1e-4` e `2e-4`, épocas `2` e `3`, com LoRA rank 8. Validação compara accuracy, macro-F1 e loss; teste final usa o melhor macro-F1 de validação. Semente fixa, divisão estratificada e dados determinísticos. Consulte `docs/metodologia.md` para protocolo, limitações e interpretação. Não escolha configuração pelo conjunto de teste.
+O experimento foi executado em Windows, Python 3.12.6, PyTorch 2.14.1+cu130 e CUDA 13.0, usando uma NVIDIA GeForce RTX 3060 com 12 GB de VRAM. O registro técnico está em [`results/gpu_info.txt`](results/gpu_info.txt), e a captura do terminal PowerShell está em [`Evidencia_GPU.png`](Evidencia_GPU.png).
 
-## Estrutura
+## Conteúdo do repositório
 
-- `data/`: exemplos sintéticos em JSONL, partições explícitas.
-- `scripts/train.py`: fine-tuning e busca de hiperparâmetros, com GPU obrigatória.
-- `scripts/evaluate.py`: avaliação independente em teste.
-- `scripts/check_gpu.py`: diagnóstico exportável para evidência.
-- `app.py`: frontend Streamlit para inserir prompts e inspecionar resposta/categoria.
-- `docs/`: metodologia, execução, modelo e roteiro para apresentação.
-- `results/`: métricas e previsões reais da execução; veja também a captura da GPU em `Evidencia_GPU.png`.
+- [`docs/relatorio.md`](docs/relatorio.md): relatório do problema, método, resultados e limitações.
+- [`docs/metodologia.md`](docs/metodologia.md): protocolo experimental e detalhes para reprodução.
+- [`docs/apresentacao.md`](docs/apresentacao.md): síntese dos achados e evidência visual.
+- `data/`: partições JSONL do conjunto sintético.
+- `scripts/`: verificação da GPU, fine-tuning e avaliação.
+- `app.py`: frontend local de inferência.
+- `results/`: resultados da execução experimental registrada.
 
-## GitHub
+## Reprodução do experimento
 
-Versione o código, documentação, dados sintéticos e tabelas CSV em `results/`. Não envie `artifacts/` (adaptadores) nem logs grandes; publique-os como release se solicitado pela disciplina. Antes da entrega, execute o pipeline na sua GPU, revise os CSVs, capture o terminal do VS Code e confirme que a URL remota GitHub está acessível para o docente.
+Com Python 3.12, uma GPU NVIDIA compatível e os drivers instalados, o ambiente é preparado com PyTorch CUDA e os pacotes listados em `requirements.txt`. A execução é feita nesta ordem:
 
-## Licenças e atribuições
+```powershell
+python scripts/check_gpu.py
+python scripts/train.py
+python scripts/evaluate.py
+streamlit run app.py
+```
 
-Qwen2.5 usa a licença Apache-2.0. Confira o cartão e os termos atuais do modelo antes de redistribuir adaptadores. O código deste repositório está sob MIT (ver `LICENSE`).
+O primeiro acesso baixa o modelo-base e o tokenizer do Hugging Face Hub. Treinamento, avaliação e inferência ocorrem localmente; o código interrompe treino e avaliação se CUDA não estiver disponível.
+
+Os adaptadores LoRA produzidos pelo treinamento são salvos localmente em `artifacts/` e não fazem parte deste repositório. Os scripts e os resultados tabulares estão versionados para que o procedimento e os números registrados possam ser examinados e reproduzidos.
+
+## Licenças
+
+O código deste projeto está sob MIT (arquivo [`LICENSE`](LICENSE)). O modelo Qwen2.5-0.5B-Instruct é disponibilizado sob Apache-2.0, conforme seu [cartão oficial](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct). Os exemplos do conjunto são sintéticos e foram criados para este experimento.
