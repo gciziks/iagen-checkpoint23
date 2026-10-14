@@ -2,6 +2,15 @@
 
 Este repositório apresenta um experimento de adaptação supervisionada de um modelo de linguagem para classificar mensagens de suporte em cinco categorias: `acesso`, `pagamento`, `entrega`, `cancelamento` e `outros`. A solução usa o **Qwen2.5-0.5B-Instruct** como modelo-base e ajuste fino eficiente **LoRA**, com treinamento e inferência local em GPU NVIDIA.
 
+
+## Equipe
+
+- Gabriel Ciziks — RM98215
+- Victor Nuzzi — RM98209
+- Lucca Sabatini — RM98169
+- Cassio Valezzi — RM551059
+
+
 ## Resumo dos resultados
 
 Foram comparadas quatro configurações, variando taxa de aprendizado e número de épocas. A configuração selecionada pela validação foi taxa `2e-4` e três épocas. No conjunto de teste, composto por dez exemplos sintéticos, obteve accuracy de **0,90** e macro-F1 de **0,893** (nove classificações corretas). Um chamado da classe `outros` foi previsto como `acesso`.
@@ -44,13 +53,6 @@ streamlit run app.py
 O primeiro acesso baixa o modelo-base e o tokenizer do Hugging Face Hub. Treinamento, avaliação e inferência ocorrem localmente; o código interrompe treino e avaliação se CUDA não estiver disponível.
 
 Os adaptadores LoRA produzidos pelo treinamento são salvos localmente em `artifacts/` e não fazem parte deste repositório. Os scripts e os resultados tabulares estão versionados para que o procedimento e os números registrados possam ser examinados e reproduzidos.
-
-## Equipe
-
-- Gabriel Ciziks — RM98215
-- Victor Nuzzi — RM98209
-- Lucca Sabatini — RM98169
-- Cassio Valezzi — RM551059
 
 ## Licenças
 
