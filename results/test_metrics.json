@@ -1,0 +1,145 @@
+{
+  "experiment": "lr0.0002_ep3",
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "classification_report": {
+    "acesso": {
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1-score": 0.8,
+      "support": 2.0
+    },
+    "pagamento": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "entrega": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "cancelamento": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "outros": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1-score": 0.6666666666666666,
+      "support": 2.0
+    },
+    "accuracy": 0.9,
+    "macro avg": {
+      "precision": 0.9333333333333332,
+      "recall": 0.9,
+      "f1-score": 0.8933333333333333,
+      "support": 10.0
+    },
+    "weighted avg": {
+      "precision": 0.9333333333333332,
+      "recall": 0.9,
+      "f1-score": 0.8933333333333333,
+      "support": 10.0
+    }
+  },
+  "labels": [
+    "acesso",
+    "pagamento",
+    "entrega",
+    "cancelamento",
+    "outros"
+  ],
+  "confusion_matrix": [
+    [
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "predictions": [
+    {
+      "text": "Não consigo acessar minha conta porque a verificação por SMS falha.",
+      "gold": "acesso",
+      "predicted": "acesso"
+    },
+    {
+      "text": "Quero alterar a senha, mas não consigo entrar no perfil.",
+      "gold": "acesso",
+      "predicted": "acesso"
+    },
+    {
+      "text": "Fui cobrado novamente depois de quitar a fatura.",
+      "gold": "pagamento",
+      "predicted": "pagamento"
+    },
+    {
+      "text": "Como obtenho o recibo do pagamento feito pelo Pix?",
+      "gold": "pagamento",
+      "predicted": "pagamento"
+    },
+    {
+      "text": "Minha entrega não chegou na data prometida.",
+      "gold": "entrega",
+      "predicted": "entrega"
+    },
+    {
+      "text": "A encomenda chegou aberta e o item está faltando.",
+      "gold": "entrega",
+      "predicted": "entrega"
+    },
+    {
+      "text": "Quero parar de usar o serviço e cancelar o plano.",
+      "gold": "cancelamento",
+      "predicted": "cancelamento"
+    },
+    {
+      "text": "Solicito desistência da compra dentro do prazo.",
+      "gold": "cancelamento",
+      "predicted": "cancelamento"
+    },
+    {
+      "text": "Onde posso consultar os termos de uso?",
+      "gold": "outros",
+      "predicted": "outros"
+    },
+    {
+      "text": "A tela de ajuda apresenta uma mensagem de erro.",
+      "gold": "outros",
+      "predicted": "acesso"
+    }
+  ]
+}

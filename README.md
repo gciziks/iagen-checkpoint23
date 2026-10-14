@@ -28,6 +28,7 @@ O treino compara learning rates `1e-4` e `2e-4`, épocas `2` e `3`, com LoRA ran
 - `scripts/check_gpu.py`: diagnóstico exportável para evidência.
 - `app.py`: frontend Streamlit para inserir prompts e inspecionar resposta/categoria.
 - `docs/`: metodologia, execução, modelo e roteiro para apresentação.
+- `results/`: métricas e previsões reais da execução; veja também a captura da GPU em `Evidencia_GPU.png`.
 
 ## GitHub
 

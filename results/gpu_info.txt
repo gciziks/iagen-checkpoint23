@@ -1,0 +1,7 @@
+Data UTC: 2026-10-14T22:47:51.380240+00:00
+Python: 3.12.6
+PyTorch: 2.14.1+cu130
+CUDA runtime (PyTorch): 13.0
+GPU: NVIDIA GeForce RTX 3060
+VRAM total (GiB): 12.00
+CUDA available: True

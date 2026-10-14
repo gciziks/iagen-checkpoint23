@@ -13,9 +13,15 @@
 
 | Configuração | LR | Épocas | Loss validação | Accuracy validação | Macro-F1 validação |
 |---|---:|---:|---:|---:|---:|
-| lr1e-4_ep2 | 0,0001 | 2 | preencher | preencher | preencher |
-| lr1e-4_ep3 | 0,0001 | 3 | preencher | preencher | preencher |
-| lr2e-4_ep2 | 0,0002 | 2 | preencher | preencher | preencher |
-| lr2e-4_ep3 | 0,0002 | 3 | preencher | preencher | preencher |
+| lr1e-4_ep2 | 0,0001 | 2 | 3,732 | 0,50 | 0,381 |
+| lr1e-4_ep3 | 0,0001 | 3 | 1,777 | 0,50 | 0,381 |
+| lr2e-4_ep2 | 0,0002 | 2 | 0,765 | 0,90 | 0,893 |
+| lr2e-4_ep3 | 0,0002 | 3 | 0,158 | 0,90 | 0,893 |
 
-Para relatório final, substitua os campos com `results/experiments.csv` após execução. Teste final: accuracy `____`, macro-F1 `____`; não preencher até que `python scripts/evaluate.py` tenha sido executado.
+Execução observada em NVIDIA GeForce RTX 3060 (12 GB), CUDA 13.0, PyTorch 2.14.1. Configuração selecionada por menor loss entre as configurações empatadas em macro-F1: lr `2e-4`, 3 épocas. No teste: accuracy `0,90`, macro-F1 `0,893` (9/10 exemplos corretos). Um exemplo de `outros` foi previsto como `acesso`. Consulte a matriz e as previsões completas em `results/test_metrics.json` e `results/test_predictions.csv`. Os arquivos de resultados descrevem esta execução local; artefatos do adaptador não são versionados.
+
+## Evidência da GPU
+
+Captura do terminal PowerShell com `nvidia-smi` e `check_gpu.py`:
+
+![Evidência da RTX 3060 e PyTorch CUDA](../Evidencia_GPU.png)
