@@ -1,0 +1,50 @@
+{"text":"Não consigo entrar na minha conta desde ontem, diz que a senha está inválida.","label":"acesso"}
+{"text":"Quero redefinir minha senha, mas o link do e-mail expirou.","label":"acesso"}
+{"text":"Meu usuário foi bloqueado depois de várias tentativas de login.","label":"acesso"}
+{"text":"A autenticação em duas etapas não está enviando o código para meu celular.","label":"acesso"}
+{"text":"Preciso trocar o endereço de e-mail cadastrado na conta.","label":"acesso"}
+{"text":"O aplicativo não reconhece meu CPF quando tento fazer login.","label":"acesso"}
+{"text":"Esqueci a senha e não recebo o e-mail para recuperar o acesso.","label":"acesso"}
+{"text":"A página fica carregando depois que coloco minhas credenciais.","label":"acesso"}
+{"text":"Minha conta foi suspensa e não sei como desbloquear.","label":"acesso"}
+{"text":"Não consigo confirmar meu cadastro pelo código enviado por SMS.","label":"acesso"}
+{"text":"O pagamento foi cobrado duas vezes no meu cartão.","label":"pagamento"}
+{"text":"Preciso da segunda via do boleto que venceu ontem.","label":"pagamento"}
+{"text":"Meu Pix aparece como concluído no banco, mas o pedido está pendente.","label":"pagamento"}
+{"text":"Quais cartões de crédito são aceitos para pagar a assinatura?","label":"pagamento"}
+{"text":"Quero contestar uma cobrança que não reconheço na fatura.","label":"pagamento"}
+{"text":"O reembolso foi aprovado, mas ainda não apareceu no cartão.","label":"pagamento"}
+{"text":"O boleto não baixa quando tento pagar pelo aplicativo do banco.","label":"pagamento"}
+{"text":"Minha assinatura foi renovada e quero entender o valor cobrado.","label":"pagamento"}
+{"text":"Posso alterar o cartão usado na próxima cobrança mensal?","label":"pagamento"}
+{"text":"O pagamento por Pix expirou antes de eu conseguir concluir.","label":"pagamento"}
+{"text":"O rastreamento diz que o pacote saiu para entrega há três dias.","label":"entrega"}
+{"text":"Meu pedido está atrasado e ainda não recebi nenhuma atualização.","label":"entrega"}
+{"text":"A caixa chegou amassada e faltam dois produtos do pedido.","label":"entrega"}
+{"text":"Quero saber o prazo de entrega para meu endereço em Recife.","label":"entrega"}
+{"text":"O entregador marcou como entregue, mas não encontrei a encomenda.","label":"entrega"}
+{"text":"Como altero o endereço de entrega de uma compra já realizada?","label":"entrega"}
+{"text":"Recebi o produto errado no pacote que chegou hoje.","label":"entrega"}
+{"text":"O código de rastreio informado não existe nos Correios.","label":"entrega"}
+{"text":"Posso retirar meu pedido em uma agência em vez de receber em casa?","label":"entrega"}
+{"text":"O frete ficou muito caro para entregar no meu bairro.","label":"entrega"}
+{"text":"Quero cancelar o pedido antes que ele seja enviado.","label":"cancelamento"}
+{"text":"Como faço para encerrar minha assinatura mensal?","label":"cancelamento"}
+{"text":"Solicito o cancelamento da compra realizada por engano hoje.","label":"cancelamento"}
+{"text":"Não quero mais receber o serviço e preciso parar as próximas cobranças.","label":"cancelamento"}
+{"text":"Posso desistir do pedido e receber meu dinheiro de volta?","label":"cancelamento"}
+{"text":"O cancelamento não aparece disponível na área do cliente.","label":"cancelamento"}
+{"text":"Cancelei a assinatura, mas ela continua ativa.","label":"cancelamento"}
+{"text":"Preciso anular uma renovação automática que acabou de acontecer.","label":"cancelamento"}
+{"text":"Qual é o prazo para cancelar uma compra pela internet?","label":"cancelamento"}
+{"text":"Quero interromper o plano antes da próxima fatura.","label":"cancelamento"}
+{"text":"Vocês têm lojas físicas em Belo Horizonte?","label":"outros"}
+{"text":"Qual é o horário de atendimento no feriado?","label":"outros"}
+{"text":"Gostaria de enviar uma sugestão para melhorar o aplicativo.","label":"outros"}
+{"text":"Onde encontro as instruções para configurar o produto?","label":"outros"}
+{"text":"O site está com o texto cortado no meu celular.","label":"outros"}
+{"text":"Como faço para atualizar o aplicativo no Android?","label":"outros"}
+{"text":"Preciso do contato da assistência técnica autorizada.","label":"outros"}
+{"text":"Vocês oferecem desconto para estudantes?","label":"outros"}
+{"text":"Recebi um produto e quero saber como funciona a garantia.","label":"outros"}
+{"text":"O chat de atendimento está fora do ar neste momento.","label":"outros"}
