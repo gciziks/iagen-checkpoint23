@@ -45,6 +45,13 @@ O primeiro acesso baixa o modelo-base e o tokenizer do Hugging Face Hub. Treinam
 
 Os adaptadores LoRA produzidos pelo treinamento são salvos localmente em `artifacts/` e não fazem parte deste repositório. Os scripts e os resultados tabulares estão versionados para que o procedimento e os números registrados possam ser examinados e reproduzidos.
 
+## Equipe
+
+- Gabriel Ciziks — RM98215
+- Victor Nuzzi — RM98209
+- Lucca Sabatini — RM98169
+- Cassio Valezzi — RM551059
+
 ## Licenças
 
 O código deste projeto está sob MIT (arquivo [`LICENSE`](LICENSE)). O modelo Qwen2.5-0.5B-Instruct é disponibilizado sob Apache-2.0, conforme seu [cartão oficial](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct). Os exemplos do conjunto são sintéticos e foram criados para este experimento.
